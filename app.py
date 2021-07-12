@@ -80,7 +80,7 @@ st.markdown(
 
 
 #############################################dataset and raw data
-my_expander6 = st.beta_expander("Get fundamentals by choosing Stocks(SNP 500)", expanded=False)
+my_expander6 = st.beta_expander("FUNDAMENTAL ANALYSIS FOR Stocks(SNP 500)", expanded=False)
 with my_expander6:
    
     snp500 = pd.read_csv(r'SP500.csv')
@@ -231,7 +231,7 @@ def show_info(df):
     col7.write(fo4)
 
 
-my_expander7 = st.beta_expander("Basic Info ", expanded=False)
+my_expander7 = st.beta_expander("Information About The Datasets Used ", expanded=False)
 with my_expander7:
     st.header('Select Dataset to view info')
     df = pd.DataFrame({
@@ -255,7 +255,7 @@ with my_expander7:
         
         show_info(df2)
 
-my_expander2 = st.beta_expander("Plotting Visualization", expanded=False)
+my_expander2 = st.beta_expander("Visualization For Stock Prices ", expanded=False)
 with my_expander2:
 
 
@@ -281,7 +281,7 @@ with my_expander2:
 
 
 
-my_expander3 = st.beta_expander("Visualization with Indicators", expanded=False)
+my_expander3 = st.beta_expander("Visualization with Indicators for Stock Prices", expanded=False)
 with my_expander3:
     df = pd.read_csv(r'test_002.csv')
 
@@ -355,7 +355,7 @@ with my_expander3:
 
         st.plotly_chart(figMA, use_container_width=True)
 
-my_expander4 = st.beta_expander("Visualization and Prediction(on specific dataset)", expanded=False)
+my_expander4 = st.beta_expander("Visualization and Prediction(NIFTY & MSFT)", expanded=False)
 with my_expander4:
     st.header('Users Input Parameters')
     df = pd.DataFrame({
@@ -370,7 +370,7 @@ with my_expander4:
         df = pickle.load(open('df_nifty.pkl', 'rb'))
         
         scaler = pickle.load(open('scaler.pkl', 'rb'))
-        model = load_model('model.h5')
+        model = load_model('model_lstm_df.h5')
         with open('ftest.pkl', 'rb') as f:
             f_test = pickle.load(f)
 
@@ -439,7 +439,7 @@ with my_expander4:
 
         df = pickle.load(open("df_msft.pkl", "rb"))
         scaler = pickle.load(open('scalerMSFT.pkl', 'rb'))
-        model = load_model('modelmsft.h5')
+        model = load_model('model_gru_msft.h5')
        
 
         with open('ftestMSFT.pkl', 'rb') as f:
@@ -495,5 +495,48 @@ with my_expander4:
         st.pyplot(fig8)
 st.markdown(
 
-            "<center><h3 style='text-align: centre; color: red;'>Developed By: AASHISH BHARDWAJ,KUNAL SHARMA,VRUNDA,PRITI</h3></center>",
+            "<center><h3 style='text-align: centre; color: red;'>THANK YOU!!</h3></center>",
             unsafe_allow_html=True)
+#st.checkbox("Show Credits")
+st.sidebar.markdown("<h1 style='text-align: left; color: green;'>Welcome!</h1>",
+                        unsafe_allow_html=True)
+
+urllib.request.urlretrieve("https://technocolabs.tech//assets//img//logo1.png", "logo1.png")
+# img = Image.open("logo1.png")
+# img.show()
+img = Image.open("logo1.png")
+
+# st.text[website](https://technocolabs.tech/)
+# display image using streamlit
+# width is used to set the width of an image
+st.sidebar.image(img, width=200)
+
+st.sidebar.subheader("Credits")
+
+st.sidebar.subheader("Under Guidance of")
+# **Guidance @ CDAC-ACTS, Pune**\n
+st.sidebar.info(
+"""
+1. [Yasin Shah] (https://www.linkedin.com/in/yasinshah9598)\n
+2. [Deepika Goel] (https://www.linkedin.com/in/deepikagoel1)\n
+3. Team @ [Technocolab](https://www.linkedin.com/company/technocolabs/)\n
+""")
+st.sidebar.subheader("Contributors/Project Team")
+st.sidebar.info(
+"1. [Kunal Sharma](https://www.linkedin.com/in/kunal-sharma-01476b194/)\n"
+"2. [Ashish Bharadwaj](https://www.linkedin.com/in/ashish-b-30516092/)\n"
+"3. [Priti Lahare](https://www.linkedin.com/in/priti-lahare-179144193/)\n"
+)
+st.sidebar.subheader("Project Report")
+st.sidebar.info("[Project Report](https://docs.google.com/document/d/1Z2qNh5ts-EhWVE5N4u-3Ja9jlSd9IvWvm4sf9I_ue-s/edit?usp=sharing)\n")
+st.sidebar.subheader("Poster Study")
+st.sidebar.info("[Poster Study](https://drive.google.com/file/d/1DvXZs8RfU_3vHC0Y2qhwsWc6kYeTa1YN/view)\n")
+st.sidebar.subheader("Research Paper")
+st.sidebar.info("[Research Paper](https://pdf.sciencedirectassets.com/280203/1-s2.0-S1877050920X00056/1-s2.0-S1877050920308851/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQC6XzXuZ4Gz0dbs6PN%2FDaXaHRaglKj4KfhGELIp9YWjjQIgD9h2Pus4WvI1u6oKjIR0UI%2F%2BVZTsd6wNGApwcQutM5QqgwQIvf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAEGgwwNTkwMDM1NDY4NjUiDB22FYXhJ7THmMiXxyrXA1rZ2KkRT%2BZW%2BUYL9o2WtBlizddTAknNcGc4jERCRgouEKnApkK5vDs%2BCkDEDAXxrwR67TvnaNNPGiXnMJI045Zy37sj0P2x6AccQV7ACqwgnXcptBM0KYqWuQx%2Bm%2BzNzyHVohE2K2VOSifE4UGrlZVlCNmXPTzkB00xVAROG%2FTNR1v%2B6qACqHTvaCVqIpI%2B81Xsf7yJPpbbwOswEDCfttc67DMkBrVIlUGnByXnGHnCkijIcgaE8V6U2T16V77FJa3k0lerhSto%2Fg06R8v0P90ewHtX9BSn187PEKWN6UA%2FFJcLkfz1%2B2%2BqtuKiK6fIN2lLHTWq5JgRsOyd9XxmiF1gVOblX%2Fty%2FfQR1GrATfvYzcb80ZZscl5pho%2B1PS7TA0YuPBt8SIuT5GvuCw7gs8iBQwpQPC5x4QyHMxnaSm7DDIj8JoorEq0%2BkYUv0Fsdfeg1%2FqyAXwjK4zaqnPPzO9FTHJhJ4%2By8rnQSGDVvfILZvwEfDdvqNOYOTV6dd0mX2njkEK4Xz6%2F7MYUV2sMNdsQzbGd%2BFTBFnmoJS3ShR8au0ky1h6deYcHp8etJvxm%2B%2Bjal1cLDDItf%2BIkohjA4SaijrKN%2FKW6nG22ZUKDInsn3WfAG2xb%2FjzDZr6uHBjqlAZRwwJnViy5nlus2fTGPc5V0miti8Bcfl2HTl0aOUjahIIIdjbH7w0FfOFgtXmGuTS0oDAcdRiWGhomD954U34s%2BoS7upCyfyUcTrO6NgbjUupmEMTlZFzCLgOXOKeNNrlTZTMbav0deQJw%2BXkUoEEKBIZFPp0I5M0dmkZ%2BVumJ%2FRwBGAi4Stjqd6aAclO5kjCrac8gSipU9MUlM2Mm5NY%2BRYp9Lgg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210711T122628Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY3HPPI3UC%2F20210711%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=0993d17d3157e16c3b21fabc2af9ec8b58677e6f8a2f24318f63db0d95087688&hash=7638c8f9304e88925aa21f96d30a3aa891552c76597be13a967035397624e747&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S1877050920308851&tid=spdf-7a3ebbad-e6d2-4d9a-bc77-beec2cca1847&sid=896ed7b21e5ef7437a6bd84-b1b5fd15247cgxrqb&type=client)\n")
+st.sidebar.subheader("References")
+st.sidebar.info("[Stock Price Prediction And Forecasting Using Stacked LSTM- Deep Learning](https://youtu.be/H6du_pfuznE)\n")
+st.sidebar.info("[Deployment of Project Stock Price Prediction-- Using Streamlit] (https://www.youtube.com/watch?v=qqPqq77nv_A) \n")
+st.sidebar.subheader("Connect with Technocolabs")
+st.sidebar.info("[Contact Us](https://technocolabs.tech/)\n")
+
+
